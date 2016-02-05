@@ -13,7 +13,7 @@ Quick Start
     ]
 
 2. Include the Reviewable URLconf in your projects urls.py:
-    url(r'^reviews/', include('Revieable.urls')),
+    url(r'^reviews/', include('Reviewable.urls', namespace='Reviewable')),
 
 3. Run `python manage.py migrate`
 
