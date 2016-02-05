@@ -6,6 +6,9 @@ Reviewable provides simple reviews for any of your models and is easily customiz
 Quick Start
 -----------
 1. Add "Reviewable" to your INSTALLED_APPS setting:
+
+... code-block::python
+
     INSTALLED_APPS = [
         ...
         'Reviewable',
@@ -13,11 +16,17 @@ Quick Start
     ]
 
 2. Include the Reviewable URLconf in your projects urls.py:
+
+... code-block::python
+
     url(r'^reviews/', include('Reviewable.urls', namespace='Reviewable')),
 
-3. Run `python manage.py migrate`
+3. Run ``python manage.py migrate``
 
-4. Add the mixin `Reviewable` to any model you want to be reviewable.
+4. Add the mixin ``Reviewable`` to any model you want to be reviewable.
+
+... code-block::python
+
         ...
         from Reviewable.models import Reviewable
         ...
@@ -31,13 +40,13 @@ Reviewable allows you to customise the templates for each reviewable model. Furt
 made available in the template context.
 
 For example:
-    1. You have a model called `Hotel` in an app called `Hotel`
+    1. You have a model called ``Hotel`` in an app called ``Hotel``
     2. You want a custom template for the review creation view
-    3. You would add a template in `Hotel/templates/Hotel` called `hotel_review_create.html`
-        * Note: This the template name has to be in camel case and all lower case
-    4. The hotel object is made available in the template context by the usual `{{ hotel }}` tag
-    5. This can be repeated for templates for all views: `hotel_review_list.html`, `hotel_review_update.html`,
-       `hotel_review_confirm_delete.html` and `hotel_review_detail.html`
+    3. You would add a template in ``Hotel/templates/Hotel`` called ``hotel_review_create.html``
+        - Note: This the template name has to be in camel case and all lower case
+    4. The hotel object is made available in the template context by the usual ``{{ hotel }}`` tag
+    5. This can be repeated for templates for all views: ``hotel_review_list.html``, ``hotel_review_update.html``,
+       ``hotel_review_confirm_delete.html`` and ``hotel_review_detail.html``
 
 Template Tags
 -------------
@@ -45,6 +54,9 @@ Template Tags
 Reviewable provides one simple but useful template inclusion tag that will include controls for your reviewable object.
 
 To use this just load in the template tag:
+
+... code-block:: python
+
     {% load reviewable %}
     ...
     {% show_review_controls reviewable_object %}
@@ -58,8 +70,33 @@ Post Delete Signals
 Deletion of a reviewable_object won't automatically cause a cascade delete all of the objects reviews. Hence, it
 is a good idea to use the post delete signal somewhere in your app as below:
 
+... code-block::python
+
     from MyApp.models import ReviewableModel
     from django.db.models.signals import post_delete
     ...
 
     post_delete.connect(ReviewableModel.delete_reviews, sender=ReviewableModel)
+
+Settings
+--------
+
+All settings are shown below with their defaults.
+
+REVIEW_RATING_CHOICES
++++++++++++++++++++++
+
+... code-block::python
+
+    REVIEW_RATING_CHOICES=(
+        (1, '1 Star'),
+        (2, '2 Star'),
+        (3, '3 Star'),
+        (4, '4 Star'),
+        (5, '5 Star')
+    )
+
+REVIEW_DELETE_SUCCESS_URL
++++++++++++++++++++++++++
+
+REVIEW_DELETE_SUCCESS_URL='/'
