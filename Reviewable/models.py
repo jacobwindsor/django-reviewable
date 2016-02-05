@@ -91,7 +91,7 @@ class Reviewable(object):
         """Gets the average score of the object's rating"""
         reviews = self.reviews
         if not reviews:
-            return False
+            return 0
         count = self.review_count
         total = 0
         for review in reviews:
@@ -99,4 +99,4 @@ class Reviewable(object):
             total += rating
         if total > 0:
             return total/count
-        return False
+        return 0

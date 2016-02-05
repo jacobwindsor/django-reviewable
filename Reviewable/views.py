@@ -98,7 +98,7 @@ class ReviewCreate(LoginRequiredMixin, ReviewableCreateListViewMixin, CreateView
 
 
 class ReviewDelete(LoginRequiredMixin, ReviewableViewMixin, DeleteView):
-    success_url = reverse_lazy('Pages:home')
+    success_url = reverse_lazy('/')
     template_name = 'review_confirm_delete.html'
 
 

@@ -1,7 +1,6 @@
 <div>
-    {% if user.is_authenticated %}
-        <a href="{% url "Reviewable:review-create" content_type review_object %}">Review this</a>
-    {% endif %}
+    <a href="{% url "Reviewable:review-create" content_type review_object.pk %}">Review this</a> |
+    <a href="{% url "Reviewable:review-list" content_type review_object.pk %}">All Reviews</a>
     Average Rating: {{ average_rating }}
     Total Reviews: {{ review_count }}
 </div>
