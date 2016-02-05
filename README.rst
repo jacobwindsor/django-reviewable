@@ -13,13 +13,11 @@ Quick Start
     ]
 
 2. Include the Reviewable URLconf in your projects urls.py:
-
     url(r'^reviews/', include('Revieable.urls')),
 
 3. Run `python manage.py migrate`
 
 4. Add the mixin `Reviewable` to any model you want to be reviewable.
-
         ...
         from Reviewable.models import Reviewable
         ...
