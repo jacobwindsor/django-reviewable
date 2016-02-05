@@ -7,7 +7,7 @@ Quick Start
 -----------
 1. Add "Reviewable" to your INSTALLED_APPS setting:
 
-.. code-block::python
+.. code-block:: python
 
     INSTALLED_APPS = [
         ...
@@ -17,7 +17,7 @@ Quick Start
 
 2. Include the Reviewable URLconf in your projects urls.py:
 
-.. code-block::python
+.. code-block:: python
 
     url(r'^reviews/', include('Reviewable.urls', namespace='Reviewable')),
 
@@ -25,7 +25,7 @@ Quick Start
 
 4. Add the mixin ``Reviewable`` to any model you want to be reviewable.
 
-.. code-block::python
+.. code-block:: python
 
         ...
         from Reviewable.models import Reviewable
@@ -70,7 +70,7 @@ Post Delete Signals
 Deletion of a reviewable_object won't automatically cause a cascade delete all of the objects reviews. Hence, it
 is a good idea to use the post delete signal somewhere in your app as below:
 
-.. code-block::python
+.. code-block:: python
 
     from MyApp.models import ReviewableModel
     from django.db.models.signals import post_delete
@@ -86,7 +86,7 @@ All settings are shown below with their defaults.
 REVIEW_RATING_CHOICES
 +++++++++++++++++++++
 
-.. code-block::python
+.. code-block:: python
 
     REVIEW_RATING_CHOICES=(
         (1, '1 Star'),
@@ -99,6 +99,6 @@ REVIEW_RATING_CHOICES
 REVIEW_DELETE_SUCCESS_URL
 +++++++++++++++++++++++++
 
-.. code-block::python
+.. code-block:: python
 
     REVIEW_DELETE_SUCCESS_URL='/'
