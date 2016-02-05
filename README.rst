@@ -67,7 +67,7 @@ The name of the template is "Reviewable/__review_controls.html".
 Post Delete Signals
 -------------------
 
-Deletion of a reviewable_object won't automatically cause a cascade delete all of the objects reviews. Hence, it
+Deletion of a reviewable object won't automatically cause a cascade delete of all of the objects reviews. Hence, it
 is a good idea to use the post delete signal somewhere in your app as below:
 
 .. code-block:: python
