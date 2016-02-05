@@ -6,7 +6,13 @@ models can be customised with ease.
 
 Quick Start
 -----------
-1. Add "Reviewable" to your INSTALLED_APPS setting:
+1.
+
+.. code-block:: bash
+
+    $ pip install django-reviewable
+
+2. Add "Reviewable" to your INSTALLED_APPS setting:
 
 .. code-block:: python
 
@@ -22,9 +28,9 @@ Quick Start
 
     url(r'^reviews/', include('Reviewable.urls', namespace='Reviewable')),
 
-3. Run ``python manage.py migrate``
+2. Run ``python manage.py migrate``
 
-4. Add the mixin ``Reviewable`` to any model you want to be reviewable.
+5. Add the mixin ``Reviewable`` to any model you want to be reviewable.
 
 .. code-block:: python
 
