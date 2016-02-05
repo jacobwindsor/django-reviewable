@@ -1,7 +1,8 @@
 ==========
 Reviewable
 ==========
-Reviewable provides simple reviews for any of your models and is easily customizable.
+Reviewable provides simple, customizable reviews for any of your Django models. The templates for each of your reviewable
+models can be customised with ease.
 
 Quick Start
 -----------
