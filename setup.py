@@ -20,9 +20,9 @@ setup(
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Framework :: Django :: X.Y',  # replace "X.Y" as appropriate
+        'Framework :: Django :: 1.9',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',  # example license
+        'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3.5',
