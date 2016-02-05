@@ -20,7 +20,7 @@ class Review(models.Model):
         (4, '4 Star'),
         (5, '5 Star')
     )
-    rating = models.IntegerField(choices=RATINGS)
+    rating = models.IntegerField(choices=getattr(settings, 'REVIEW_RATING_CHOICES', RATINGS))
     title = models.CharField(max_length=100)
 
 

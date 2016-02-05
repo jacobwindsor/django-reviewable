@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import ImproperlyConfigured
@@ -98,7 +99,7 @@ class ReviewCreate(LoginRequiredMixin, ReviewableCreateListViewMixin, CreateView
 
 
 class ReviewDelete(LoginRequiredMixin, ReviewableViewMixin, DeleteView):
-    success_url = reverse_lazy('/')
+    success_url = getattr(settings, 'REVIEW_DELETE_SUCCESS_URL', '/')
     template_name = 'review_confirm_delete.html'
 
 

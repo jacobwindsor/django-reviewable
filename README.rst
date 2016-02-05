@@ -38,3 +38,28 @@ For example:
     4. The hotel object is made available in the template context by the usual `{{ hotel }}` tag
     5. This can be repeated for templates for all views: `hotel_review_list.html`, `hotel_review_update.html`,
        `hotel_review_confirm_delete.html` and `hotel_review_detail.html`
+
+Template Tags
+-------------
+
+Reviewable provides one simple but useful template inclusion tag that will include controls for your reviewable object.
+
+To use this just load in the template tag:
+    {% load reviewable %}
+    ...
+    {% show_review_controls reviewable_object %}
+
+The template for the inclusion tag is very basic so it is a good idea to override it in the usual Django fashion.
+The name of the template is "Reviewable/__review_controls.html".
+
+Post Delete Signals
+-------------------
+
+Deletion of a reviewable_object won't automatically cause a cascade delete all of the objects reviews. Hence, it
+is a good idea to use the post delete signal somewhere in your app as below:
+
+    from MyApp.models import ReviewableModel
+    from django.db.models.signals import post_delete
+    ...
+
+    post_delete.connect(ReviewableModel.delete_reviews, sender=ReviewableModel)
