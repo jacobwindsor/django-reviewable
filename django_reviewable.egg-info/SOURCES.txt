@@ -2,10 +2,6 @@ LICENSE
 MANIFEST.in
 README.rst
 setup.py
-Innovate.egg-info/PKG-INFO
-Innovate.egg-info/SOURCES.txt
-Innovate.egg-info/dependency_links.txt
-Innovate.egg-info/top_level.txt
 Reviewable/__init__.py
 Reviewable/admin.py
 Reviewable/apps.py
@@ -19,3 +15,7 @@ Reviewable/templates/Reviewable/review_create.html
 Reviewable/templates/Reviewable/review_detail.html
 Reviewable/templates/Reviewable/review_list.html
 Reviewable/templates/Reviewable/review_update.html
+django_reviewable.egg-info/PKG-INFO
+django_reviewable.egg-info/SOURCES.txt
+django_reviewable.egg-info/dependency_links.txt
+django_reviewable.egg-info/top_level.txt

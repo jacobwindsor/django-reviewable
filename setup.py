@@ -9,7 +9,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 
 setup(
-    name='Innovate',
+    name='django-reviewable',
     version='0.1',
     packages=['Reviewable', 'Reviewable.migrations'],
     url='https://github.com/jacobwindsor/django-reviewable',
