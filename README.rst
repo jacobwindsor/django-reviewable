@@ -39,4 +39,4 @@ For example:
         * Note: This the template name has to be in camel case and all lower case
     4. The hotel object is made available in the template context by the usual `{{ hotel }}` tag
     5. This can be repeated for templates for all views: `hotel_review_list.html`, `hotel_review_update.html`,
-    `hotel_review_confirm_delete.html` and `hotel_review_detail.html`
+       `hotel_review_confirm_delete.html` and `hotel_review_detail.html`
