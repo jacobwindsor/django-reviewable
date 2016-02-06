@@ -7,6 +7,9 @@ from stream_django.activity import Activity
 
 
 class ReviewWithActivity(Activity):
+    """ Enable GetStream.io support.
+    See https://github.com/GetStream/stream-django for more information
+    """
     @property
     def activity_object_attr(self):
         return self
