@@ -109,3 +109,13 @@ REVIEW_DELETE_SUCCESS_URL
 .. code-block:: python
 
     REVIEW_DELETE_SUCCESS_URL='/'
+
+REVIEW_STREAM_ENABLED
++++++++++++++++++++++
+
+Reviewable can utilise GetStream if required. This would mean reviews are automatically published to your GetStream.io
+feed. See https://github.com/GetStream/stream-django for more information
+
+.. code-block:: python
+
+    REVIEW_STREAM_ENABLED=False

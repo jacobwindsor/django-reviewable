@@ -3,9 +3,26 @@ from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.core.urlresolvers import reverse
 from django.db import models
+from stream_django.activity import Activity
 
 
-class Review(models.Model):
+class ReviewWithActivity(Activity):
+    @property
+    def activity_object_attr(self):
+        return self
+
+
+class ReviewNoActivity(object):
+    pass
+
+if getattr(settings, 'REVIEW_STREAM_ENABLED', False):
+    # Enable get_stream if enabled in settings
+    BaseReview = ReviewWithActivity
+else:
+    BaseReview = ReviewNoActivity
+
+
+class Review(models.Model, BaseReview):
     user = models.ForeignKey(
                              getattr(settings, 'AUTH_USER_MODEL', 'auth.User'),
                              on_delete=models.CASCADE)  # The user who created the review
