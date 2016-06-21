@@ -16,6 +16,8 @@ Reviewable/templates/Reviewable/review_create.html
 Reviewable/templates/Reviewable/review_detail.html
 Reviewable/templates/Reviewable/review_list.html
 Reviewable/templates/Reviewable/review_update.html
+Reviewable/templatetags/__init__.py
+Reviewable/templatetags/reviewable.py
 django_reviewable.egg-info/PKG-INFO
 django_reviewable.egg-info/SOURCES.txt
 django_reviewable.egg-info/dependency_links.txt
