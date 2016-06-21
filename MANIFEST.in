@@ -1,4 +1,4 @@
 include LICENSE
 include README.rst
-recursive-include Reviewable/templates/Reviewable *
+recursive-include Reviewable/templates *
 recursive-include docs *

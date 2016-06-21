@@ -10,8 +10,9 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-reviewable',
-    version='0.3.9',
+    version='0.3.9.2',
     packages=find_packages(),
+    include_package_data=True,
     url='https://github.com/jacobwindsor/django-reviewable',
     license='MIT License',
     author='Jacob Windsor',
