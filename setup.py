@@ -1,5 +1,5 @@
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 
 with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
     README = readme.read()
@@ -10,8 +10,8 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-reviewable',
-    version='0.3.3',
-    packages=['Reviewable', 'Reviewable.migrations', 'Reviewable.templatetags'],
+    version='0.3.4',
+    packages=find_packages(),
     url='https://github.com/jacobwindsor/django-reviewable',
     license='MIT License',
     author='Jacob Windsor',
